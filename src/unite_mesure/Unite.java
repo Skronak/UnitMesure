@@ -10,11 +10,16 @@ public class Unite {
     public Quantite qte;
     public List<Conversion> convertion = new ArrayList<Conversion> ();
    
+    public Unite(String nom,type_unite type,String system){
+        this.nom=nom;
+        this.type=type;
+        this.system=system;
+    }
+    
     String getNom() {
         return this.nom;
     }
 
-  
     void setNom(String value) {
         this.nom = value;
     }
@@ -36,6 +41,10 @@ public class Unite {
     void setSystem(String value) {
         // Automatically generated method. Please delete this comment before entering specific code.
         this.system = value;
+    }
+    
+    String toStringok(){
+        return nom+"     "+type+"     "+system;
     }
 
 }
