@@ -63,9 +63,43 @@ public class Unite_mesure {
                     Unite ligne = liste_unite.get(j);
                     System.out.println(ligne.toStringok());
                 }
+            }else if (i==3){
+                conversion(liste_unite);
             }
         }while(i!=99);
         sc.close();
     }
     
+    public static void conversion(ArrayList <Unite> liste_unite) {
+    	
+    	Scanner sc = new Scanner(System.in);
+	    // Récuperation des données utilisateur
+		System.out.println("Conversion d'unite");		
+		
+		System.out.println("Selectionner l'unité de départ");
+		for (int j=0;j<liste_unite.size();j++) {
+			System.out.println(liste_unite.get(j).getNom());
+		}		
+		String rep_type_depart = sc.nextLine();
+	
+		System.out.println("Quantité :");
+		double rep_quantite_depart = sc.nextDouble();
+	
+		System.out.println("Selectionner l'unité de d'arrivé");
+		for (int j=0;j<liste_unite.size();j++) {
+			System.out.println(liste_unite.get(j).getNom());
+		}
+		String rep_type_arrivee = sc.nextLine();
+	
+		// Début de la conversion
+		for (int j=0;j<liste_unite.size();j++) {
+			if (liste_unite.get(j).getNom()==rep_type_depart){	
+//				for (int k=0;k<liste_conversion.size();k++) {
+//					if (liste_conversion.get(j).getUnite().getNom()==rep_type_arrivee){	
+						//traitement
+//					}
+//				}
+			}
+		}		
+  }   
 }
