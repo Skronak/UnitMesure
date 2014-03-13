@@ -16,5 +16,10 @@ public class Addition extends Conversion {
         // Automatically generated method. Please delete this comment before entering specific code.
         this.val_add = value;
     }
+    
+    public double calculer(double quantite){
+    	return val_add+quantite;
+    }
+
 
 }

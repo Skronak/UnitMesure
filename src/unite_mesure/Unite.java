@@ -4,11 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Unite {
-    public String nom;
-    public type_unite type;
-    public String system;
-    public Quantite qte;
-    public List<Conversion> liste_conversion = new ArrayList<Conversion> ();
+	// cm,dm,
+    private String nom;
+    // volume etc
+    private type_unite type;
+    // imperial, metrique
+    private String system;
+    private Quantite qte;
+    private List<Conversion> liste_conversion = new ArrayList<Conversion> ();
    
     public Unite(){
         
@@ -19,7 +22,7 @@ public class Unite {
         this.system=system;
     }
     
-    String getNom() {
+    public String getNom() {
         return this.nom;
     }
 
@@ -31,12 +34,12 @@ public class Unite {
         this.type = value;
     }
 
-    type_unite getType() {
+    public type_unite getType() {
         // Automatically generated method. Please delete this comment before entering specific code.
         return this.type;
     }
 
-    String getSystem() {
+    public String getSystem() {
         // Automatically generated method. Please delete this comment before entering specific code.
         return this.system;
     }
@@ -46,16 +49,24 @@ public class Unite {
         this.system = value;
     }
     
-    String toStringok(){
+    public String toStringok(){
         return nom+"     "+type+"     "+system;
     }
 
-    public List<Conversion> getListe_conversion() {
-        return liste_conversion;
-    }
+	public Quantite getQte() {
+		return qte;
+	}
 
-    public void setListe_conversion(List<Conversion> liste_conversion) {
-        this.liste_conversion = liste_conversion;
-    }
-    
+	public void setQte(Quantite qte) {
+		this.qte = qte;
+	}
+
+	public List<Conversion> getListe_conversion() {
+		return liste_conversion;
+	}
+
+	public void setListe_conversion(List<Conversion> liste_conversion) {
+		this.liste_conversion = liste_conversion;
+	}
+
 }

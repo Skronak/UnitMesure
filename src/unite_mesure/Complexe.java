@@ -14,5 +14,12 @@ public class Complexe extends Conversion {
         this.conversion = conversion;
     }
     
+    public double calculer(double quantite){
+    	for(int i=0;i<conversion.size();i++){
+    		quantite=conversion.get(i).calculer(quantite);
+    	}
+    	return quantite;
+    }
+
 
 }

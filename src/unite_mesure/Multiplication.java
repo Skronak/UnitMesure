@@ -16,5 +16,9 @@ public class Multiplication extends Conversion {
         // Automatically generated method. Please delete this comment before entering specific code.
         this.taux = value;
     }
+    
+    public double calculer(double quantite){
+    	return taux*quantite;
+    }
 
 }
