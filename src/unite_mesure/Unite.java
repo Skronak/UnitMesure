@@ -8,8 +8,11 @@ public class Unite {
     public type_unite type;
     public String system;
     public Quantite qte;
-    public List<Conversion> convertion = new ArrayList<Conversion> ();
+    public List<Conversion> liste_conversion = new ArrayList<Conversion> ();
    
+    public Unite(){
+        
+    }
     public Unite(String nom,type_unite type,String system){
         this.nom=nom;
         this.type=type;
@@ -47,4 +50,12 @@ public class Unite {
         return nom+"     "+type+"     "+system;
     }
 
+    public List<Conversion> getListe_conversion() {
+        return liste_conversion;
+    }
+
+    public void setListe_conversion(List<Conversion> liste_conversion) {
+        this.liste_conversion = liste_conversion;
+    }
+    
 }

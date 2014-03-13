@@ -1,8 +1,13 @@
 package unite_mesure;
 
 public class Addition extends Conversion {
-    public int val_add;
-    int getVal_add() {
+    public double val_add;
+    
+    Addition(double val_add){
+        this.val_add=val_add;
+    }
+    
+    double getVal_add() {
         // Automatically generated method. Please delete this comment before entering specific code.
         return this.val_add;
     }

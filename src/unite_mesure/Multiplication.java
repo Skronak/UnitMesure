@@ -2,7 +2,11 @@ package unite_mesure;
 
 public class Multiplication extends Conversion {
     public double taux;
-
+    
+    Multiplication(double taux){
+        this.taux=taux;
+     }
+    
     double getTaux() {
         // Automatically generated method. Please delete this comment before entering specific code.
         return this.taux;
