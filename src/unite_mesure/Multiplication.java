@@ -21,4 +21,9 @@ public class Multiplication extends Conversion {
     	return taux*quantite;
     }
 
+    @Override
+    public String toString() {
+        return "Multiplication{" + "taux=" + taux + '}';
+    }
+
 }

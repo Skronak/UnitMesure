@@ -69,4 +69,9 @@ public class Unite {
 		this.liste_conversion = liste_conversion;
 	}
 
+    @Override
+    public String toString() {
+        return "Unite{" + "nom=" + nom + ", type=" + type + ", system=" + system + ", qte=" + qte + ", liste_conversion=" + liste_conversion + '}';
+    }
+
 }

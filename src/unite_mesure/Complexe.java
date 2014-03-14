@@ -21,5 +21,10 @@ public class Complexe extends Conversion {
     	return quantite;
     }
 
+    @Override
+    public String toString() {
+        return "Complexe{" + "conversion=" + conversion + '}';
+    }
+
 
 }

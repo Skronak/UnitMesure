@@ -21,5 +21,10 @@ public class Addition extends Conversion {
     	return val_add+quantite;
     }
 
+    @Override
+    public String toString() {
+        return "Addition{" + "val_add=" + val_add + '}';
+    }
+
 
 }

@@ -25,9 +25,15 @@ public class Unite_mesure {
         Gestion_conversion creation = new Gestion_conversion();
         int i,k;
         String nom,system;
+        
+        Unite unite2=new Unite("cm",null,"metrique");
+        liste_unite.add(unite2);
+        Unite unite3=new Unite("m",null,"metrique");
+        liste_unite.add(unite3);
+        
        
         do{
-            System.out.println("1: Cr√©er une unit√©");
+            System.out.println("1: Cr√©er une unite");
             System.out.println("2: Afficher les unit√©s");
             System.out.println("3: Faire une convertion");
             System.out.println("4: Creer une convertion");
@@ -37,11 +43,11 @@ public class Unite_mesure {
             //creer une unit√©
             if(i==1){
                 //recupere le nom de l'unit√©
-                System.out.println("Nom de l'unit√©:");
+                System.out.println("Nom de l'unite:");
                 nom=scan.nextLine();
                 
                 //recupere le type de l'unit√©
-                System.out.println("Type de l'unit√©:");
+                System.out.println("Type de l'unite:");
                 k=0; 
                 for(type_unite type: type_unite.values()){
                       System.out.println(k+":"+ type);
@@ -50,7 +56,7 @@ public class Unite_mesure {
                 k=sc.nextInt();
                 
                 //recupere le nom du system
-                System.out.println("Nom du system (m√©trique/imp√©riale):");
+                System.out.println("Nom du system (metrique/imperiale):");
                 system=scan.nextLine();
                 
                 //instancie une unit√©
@@ -74,39 +80,40 @@ public class Unite_mesure {
         sc.close();
     }
     
-    //Demande les informations ‡ l'utilisateur et verifie qu'il y a une conversion qui existe entre les deux
+    //Demande les informations ÔøΩ l'utilisateur et verifie qu'il y a une conversion qui existe entre les deux
     public static Object[] getInformations(ArrayList <Unite> liste_unite) {
     	Unite unite_depart;
     	Unite unite_arrivee;
     	Object[]valeurs={null,null,null};
     	
     	Scanner sc = new Scanner(System.in);
-	    // RÈcuperation des donnÈes utilisateur
+
+	    // RÔøΩcuperation des donnÔøΩes utilisateur
 		System.out.println("Conversion d'unite");		
 		
-		System.out.println("Selectionner l'unitÈ de depart");
+		System.out.println("Selectionner l'unite de depart");
 		for (int j=0;j<liste_unite.size();j++) {
 			System.out.println(liste_unite.get(j).getNom());
 		}		
 		String rep_nom_depart = sc.nextLine();
 		
-		System.out.println("Selectionner l'unitÈ de d'arrivee");
+		System.out.println("Selectionner l'unitÔøΩ de d'arrivee");
 		for (int j=0;j<liste_unite.size();j++) {
 			System.out.println(liste_unite.get(j).getNom());
 		}
 		String rep_nom_arrivee = sc.nextLine();
 		
-		// DÈbut de la conversion
+		// DÔøΩbut de la conversion
 		for (int j=0;j<liste_unite.size();j++) {
 			unite_depart=liste_unite.get(j);
 			
-			if (unite_depart.getNom()==rep_nom_depart){
+			if (unite_depart.getNom().compareTo(rep_nom_depart)==0){
 				valeurs[0]=unite_depart;
-				//On parcours la liste de conversion disponible pour cette unitÈ
+				//On parcours la liste de conversion disponible pour cette unitÔøΩ
 				for (int k=0;k<unite_depart.getListe_conversion().size();k++) {
 						unite_arrivee = unite_depart.getListe_conversion().get(j).getUniteArrivee();
-					// Si on a trouvÈ la conversion reliant l'unitÈ d'arrivÈ de dÈpart et d'arrivÈ on initialise le tableau
-					if (unite_arrivee.getNom()==rep_nom_arrivee){
+					// Si on a trouvÔøΩ la conversion reliant l'unitÔøΩ d'arrivÔøΩ de dÔøΩpart et d'arrivÔøΩ on initialise le tableau
+					if (unite_arrivee.getNom().compareTo(rep_nom_arrivee)==0){
 						valeurs[1]=unite_depart.getListe_conversion().get(j);
 						valeurs[2]=unite_arrivee;
 					}
@@ -121,13 +128,14 @@ public class Unite_mesure {
     public static void convertir(ArrayList <Unite> liste_unite){
         Scanner sc = new Scanner(System.in);      
     	double quantite;
+        double quantiteArr;
     	Object[] valeurs;
-
+        System.out.println("Quantite a convertir:");
+	quantite = sc.nextDouble();
     	valeurs=getInformations(liste_unite);
-    	if (valeurs[2]!=null){ 	
-	    	System.out.println("QuantitÈ ‡ convertir:");
-	    	quantite = sc.nextDouble();
-	    	((Conversion) valeurs[2]).calculer(quantite);
+    	if (valeurs[1]!=null){ 	
+	    	quantiteArr=((Conversion) valeurs[1]).calculer(quantite);
+                System.out.println(quantiteArr);
     	}
     }
 }
