@@ -120,15 +120,15 @@ public class Gestion_conversion {
             do{
             	//menu spécifique aux operations complexes
             	System.out.println("Quelle opération voulez effectuer pour lier l'unité <"+unite_depart.getNom()+"> et  <"+unite_arrivee.getNom()+"> :");
-            	System.out.println("Veuillez selectionner l'unite de d'arrivee (en lettre)");
             	for (int j=0;j<operations.length-1;j++) {
-            		System.out.println(liste_unite.get(j).getNom());
-            		System.out.println("Selectionnez le numero correspondant");   	               
-            	}		
+            		System.out.println(j+": "+operations[j]);
+            	}
+        		System.out.println("99: Finaliser la creation");
+        		System.out.println("Selectionnez le numero correspondant");   	               
             	rep = sc.nextDouble();
 
             	//Multiplication
-            	if(rep==1){
+            	if(rep==0){
             		System.out.println("Veuillez indiquer par quel nombre multiplier l'unité <"+unite_depart.getNom()+"> (/10=> 0,1)");
             		double taux = sc.nextDouble();
             		Multiplication multiplication= new Multiplication(taux);
@@ -137,8 +137,8 @@ public class Gestion_conversion {
             	}
             	
             	//Addition
-            	else if(rep==2){
-            		System.out.println("Veuillez indiquer par quel nombre multiplier l'unité <"+unite_depart.getNom()+">(/10=> 0,1)");
+            	else if(rep==1){
+            		System.out.println("Veuillez indiquer par quel nombre additionner l'unité <"+unite_depart.getNom()+">(/10=> 0,1)");
             		val_add = sc.nextDouble();
             		Addition addition=new Addition(val_add);
             		list_conv.add(addition);
