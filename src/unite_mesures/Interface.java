@@ -1,5 +1,5 @@
 
-package unite_mesure;
+package unite_mesures;
 
 import java.util.Scanner;
 

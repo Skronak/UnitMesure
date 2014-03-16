@@ -1,4 +1,4 @@
-package unite_mesure;
+package unite_mesures;
 
 public class Conversion {
     private Unite unite_arrivee;

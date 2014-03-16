@@ -1,4 +1,4 @@
-package unite_mesure;
+package unite_mesures;
 
 public class Addition extends Conversion {
     public double val_add;

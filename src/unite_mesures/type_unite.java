@@ -1,5 +1,5 @@
 
-package unite_mesure;
+package unite_mesures;
 
 public enum type_unite {
     masse,

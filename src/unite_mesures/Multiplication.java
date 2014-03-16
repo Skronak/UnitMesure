@@ -1,4 +1,4 @@
-package unite_mesure;
+package unite_mesures;
 
 public class Multiplication extends Conversion {
     public double taux;
